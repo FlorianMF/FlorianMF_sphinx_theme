@@ -33,7 +33,7 @@ def package_files(directory:str):
 
 
 setup(
-    name = 'FlorianMF_sphinx_theme',
+    name = 'florianmf_sphinx_theme',
     version =__version__,
     author = 'Shift Lab',
     author_email= 'info@shiftlabny.com',

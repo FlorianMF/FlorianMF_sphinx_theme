@@ -40,7 +40,7 @@ module.exports = function(grunt) {
               expand: true,
               flatten: true,
               src: ['fonts/FreightSans/*'],
-              dest: 'pt_lightning_sphinx_theme/static/fonts/FreightSans',
+              dest: 'florianmf_sphinx_theme/static/fonts/FreightSans',
               filter: 'isFile'
           },
 
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
               expand: true,
               flatten: true,
               src: ['fonts/IBMPlexMono/*'],
-              dest: 'pt_lightning_sphinx_theme/static/fonts/IBMPlexMono',
+              dest: 'florianmf_sphinx_theme/static/fonts/IBMPlexMono',
               filter: 'isFile'
           }
         ]
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
               expand: true,
               flatten: true,
               src: ['images/*'],
-              dest: 'pt_lightning_sphinx_theme/static/images',
+              dest: 'florianmf_sphinx_theme/static/images',
               filter: 'isFile'
           }
         ]
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
               'node_modules/bootstrap/dist/js/bootstrap.min.js',
               'node_modules/anchor-js/anchor.min.js'
             ],
-            dest: 'pt_lightning_sphinx_theme/static/js/vendor',
+            dest: 'florianmf_sphinx_theme/static/js/vendor',
             filter: 'isFile'
           }
         ]
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'scss',
           src: ['*.scss'],
-          dest: 'pt_lightning_sphinx_theme/static/css',
+          dest: 'florianmf_sphinx_theme/static/css',
           ext: '.css'
         }]
       },
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'scss',
           src: ['*.scss'],
-          dest: 'pt_lightning_sphinx_theme/static/css',
+          dest: 'florianmf_sphinx_theme/static/css',
           ext: '.css'
         }]
       }
@@ -128,7 +128,7 @@ module.exports = function(grunt) {
 
       dist: {
         files: {
-          "pt_lightning_sphinx_theme/static/css/theme.css": "pt_lightning_sphinx_theme/static/css/theme.css"
+          "florianmf_sphinx_theme/static/css/theme.css": "florianmf_sphinx_theme/static/css/theme.css"
         }
       }
     },
@@ -142,7 +142,7 @@ module.exports = function(grunt) {
           }
         },
         src: ['js/*.js'],
-        dest: 'pt_lightning_sphinx_theme/static/js/theme.js'
+        dest: 'florianmf_sphinx_theme/static/js/theme.js'
       },
       build: {
         options: {
@@ -152,7 +152,7 @@ module.exports = function(grunt) {
           }
         },
         src: ['js/*.js'],
-        dest: 'pt_lightning_sphinx_theme/static/js/theme.js'
+        dest: 'florianmf_sphinx_theme/static/js/theme.js'
       }
     },
     uglify: {
@@ -166,8 +166,8 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ['pt_lightning_sphinx_theme/static/js/*.js', '!pt_lightning_sphinx_theme/static/js/*.min.js'],
-          dest: 'pt_lightning_sphinx_theme/static/js/',
+          src: ['florianmf_sphinx_theme/static/js/*.js', '!florianmf_sphinx_theme/static/js/*.min.js'],
+          dest: 'florianmf_sphinx_theme/static/js/',
           rename: function (dst, src) {
             // Use unminified file name for minified file
             return src;
@@ -182,10 +182,10 @@ module.exports = function(grunt) {
     },
     clean: {
       build: ["docs/build"],
-      fonts: ["pt_lightning_sphinx_theme/static/fonts"],
-      images: ["pt_lightning_sphinx_theme/static/images"],
-      css: ["pt_lightning_sphinx_theme/static/css"],
-      js: ["pt_lightning_sphinx_theme/static/js/*", "!pt_lightning_sphinx_theme/static/js/modernizr.min.js"]
+      fonts: ["florianmf_sphinx_theme/static/fonts"],
+      images: ["florianmf_sphinx_theme/static/images"],
+      css: ["florianmf_sphinx_theme/static/css"],
+      js: ["florianmf_sphinx_theme/static/js/*", "!florianmf_sphinx_theme/static/js/modernizr.min.js"]
     },
 
     watch: {
@@ -196,7 +196,7 @@ module.exports = function(grunt) {
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
-        files: ['pt_lightning_sphinx_theme/**/*', 'README.rst', 'docs/**/*.rst', 'docs/**/*.py'],
+        files: ['florianmf_sphinx_theme/**/*', 'README.rst', 'docs/**/*.rst', 'docs/**/*.py'],
         tasks: ['clean:build','exec:build_sphinx']
       },
       /* JavaScript */

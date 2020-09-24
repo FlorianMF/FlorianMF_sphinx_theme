@@ -2,12 +2,12 @@ import os
 
 from setuptools import setup
 from io import open
-from pt_lightning_sphinx_theme import __version__
+from florianmf_sphinx_theme import __version__
 
 
 def package_files(directory:str):
     """
-    Traverses target directory recursivery adding file paths to a list.
+    Traverses target directory recursively adding file paths to a list.
     Original solution found at:
 
         * https://stackoverflow.com/questions/27664504/\
@@ -22,8 +22,8 @@ def package_files(directory:str):
     -------
     paths: list
         List of file paths.
-    
-    """ 
+
+    """
     paths = []
     for (path, directories, filenames) in os.walk(directory):
         for filename in filenames:
@@ -37,22 +37,22 @@ setup(
     version =__version__,
     author = 'Shift Lab',
     author_email= 'info@shiftlabny.com',
-    url="https://github.com/pytorch/lightning_sphinx_theme",
-    docs_url="https://github.com/pytorch/lightning_sphinx_theme",
+    url="https://github.com/pytorch/FlorianMF_sphinx_theme",
+    docs_url="https://github.com/pytorch/FlorianMF_sphinx_theme",
     description='PyTorch Sphinx Theme',
-    py_modules = ['pt_lightning_sphinx_theme'],
-    packages = ['pt_lightning_sphinx_theme'],
+    py_modules = ['florianmf_sphinx_theme'],
+    packages = ['florianmf_sphinx_theme'],
     include_package_data=True,
     zip_safe=False,
-    package_data={'pt_lightning_sphinx_theme': [
+    package_data={'florianmf_sphinx_theme': [
         'theme.conf',
         '*.html',
         'theme_variables.jinja',
-        *package_files('pt_lightning_sphinx_theme/static')
+        *package_files('florianmf_sphinx_theme/static')
     ]},
     entry_points = {
         'sphinx.html_themes': [
-            'pt_lightning_sphinx_theme = pt_lightning_sphinx_theme',
+            'florianmf_sphinx_theme = florianmf_sphinx_theme',
         ]
     },
     license= 'MIT License',

@@ -1,4 +1,4 @@
-"""Pytorch Lightning Sphinx theme.
+"""FlorianMF Sphinx theme.
 
 From https://github.com/shiftlab/florianmf_sphinx_theme.
 

@@ -1,4 +1,4 @@
-# PyTorch-Lightning Sphinx Theme
+# FlorianMF Sphinx Theme
 
 Sphinx theme for [PyTorch-Lightning Docs](https://pytorch-lightning.readthedocs.io/en/latest/) based on the [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/latest).
 
@@ -6,15 +6,19 @@ Sphinx theme for [PyTorch-Lightning Docs](https://pytorch-lightning.readthedocs.
 
 Run python setup:
 
-```
+```bash
 python setup.py install
 ```
 
-and install the dependencies using `pip install -r docs/requirements.txt`
+and install the dependencies using
+
+```bash
+pip install -r docs/requirements.txt
+```
 
 In the root directory install the `package.json`:
 
-```
+```bash
 # node version 8.4.0
 yarn install
 
@@ -22,7 +26,7 @@ yarn install
 
 If you have `npm` installed then run:
 
-```
+```bash
 npm install
 ```
 
@@ -30,13 +34,13 @@ npm install
 `.env.json` file and make it empty json file. Means `.env.json file` will
 contain
 
-```
+```json
 {}
 ```
 
 Run grunt to build the html site and enable live reloading of the demo app at `localhost:1919`:
 
-```
+```bash
 grunt
 ```
 
@@ -44,7 +48,7 @@ grunt
 you want to see docs generated) then you need to specify it into `.env.json`
 file:
 
-```
+```json
 {
     "DOCS_DIR": "docs/",
     "TUTORIALS_DIR": "path/to/tutorial/directory"
@@ -53,13 +57,13 @@ file:
 
 Run grunt to build the html site for docs:
 
-```
+```bash
 grunt --project=docs
 ```
 
 and to build the html site for tutorial:
 
-```
+```bash
 grunt --project=tutorials
 ```
 
@@ -71,7 +75,7 @@ When you are ready to submit a PR with your changes you can first test that your
 
 1. Run the `grunt build` task on your branch and commit the build to Github.
 2. In your local docs or tutorials repo, remove any existing `florianmf_sphinx_theme` packages in the `src` folder (there should be a `pip-delete-this-directory.txt` file there)
-3. In `requirements.txt` replace the existing git link with a link pointing to your commit or branch, e.g. `-e git+git://github.com/{ your repo }/FlorianMF_sphinx_theme.git@{ your commit hash }#egg=florianmf_sphinx_theme`
+3. In `requirements.txt` replace the existing git link with a link pointing to your commit or branch, e.g. `-e git+git://github.com/{ your repo }/florianmf_sphinx_theme.git@{ your commit hash }#egg=florianmf_sphinx_theme`
 4. Install the requirements `pip install -r requirements.txt`
 5. Remove the current build. In the docs this is `make clean`, tutorials is `make clean-cache`
 6. Build the static site. In the docs this is `make html`, tutorials is `make html-noplot`
@@ -83,7 +87,7 @@ If your changes have been applied successfully, remove the build commit from you
 
 Before the new changes are visible in the theme the maintainer will need to run the build process:
 
-```
+```bash
 grunt build
 ```
 
@@ -102,14 +106,14 @@ Once the docs have been successfully generated you should be able to run the fol
 
 #### Docs
 
-```
+```bash
 # in ./docs
 make html
 ```
 
 #### Tutorials
 
-```
+```bash
 # root directory
 make html
 ```
@@ -118,14 +122,14 @@ Once these are successful, navigate to the `conf.py` file in each project. In th
 
 In `conf.py` change the html theme to `florianmf_sphinx_theme` and point the html theme path to this repo's local folder, which will end up looking something like:
 
-```
+```python
 html_theme = 'florianmf_sphinx_theme'
-html_theme_path = ["../../../FlorianMF_sphinx_theme"]
+html_theme_path = ["../../../florianmf_sphinx_theme"]
 ```
 
 Next create a file `.env.json` in the root of this repo with some keys/values referencing the local folders of the Docs and Tutorials repos:
 
-```
+```json
 {
   "TUTORIALS_DIR": "../tutorials",
   "DOCS_DIR": "../pytorch_lightning/docs/source"
@@ -135,12 +139,12 @@ Next create a file `.env.json` in the root of this repo with some keys/values re
 
 You can then build the Docs or Tutorials by running
 
-```
+```bash
 grunt --project=docs
 ```
 or
 
-```
+```bash
 grunt --project=tutorials
 ```
 
@@ -154,7 +158,7 @@ There are a couple of stylesheets and fonts inside the Docs and Tutorials repos 
 
 #### Docs
 
-```
+```python
 # ./docs/source/conf.py
 
 html_context = {
@@ -167,7 +171,7 @@ html_context = {
 
 #### Tutorials
 
-```
+```python
 # ./conf.py
 
 # app.add_stylesheet('css/pytorch_theme.css')
@@ -178,7 +182,7 @@ html_context = {
 
 The top navigation and mobile menu expect an "active" state for one of the menu items. To ensure that either "Docs" or "Tutorials" is marked as active, set the following config value in the respective `conf.py`, where `{project}` is either `"docs"` or `"tutorials"`.
 
-```
+```python
 html_theme_options = {
   ...
   'pytorch_project': {project}

@@ -1,6 +1,9 @@
 # FlorianMF Sphinx Theme
 
-Sphinx theme for [PyTorch-Lightning Docs](https://pytorch-lightning.readthedocs.io/en/latest/) based on the [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/latest).
+Sphinx theme for [PyTorch Docs](https://pytorch.readthedocs.io/en/latest/) based on the [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/latest).
+
+**This is an adapted version of the Pytorch Lightning sphinx theme.
+See <https://sphinx-themes.org/> and <https://www.sphinx-doc.org/en/master/usage/theming.html> for other themes and tutorials on how to adapt them at your will.**
 
 ## Local Development
 
@@ -95,10 +98,10 @@ Once that is successful commit the change to Github.
 
 ### Developing locally against PyTorch Docs and Tutorials
 
-To be able to modify and preview the theme locally against the PyTorch Lightning Docs and/or the PyTorch Lightning Tutorials first clone the repositories:
+To be able to modify and preview the theme locally against the PyTorch  Docs and/or the PyTorch  Tutorials first clone the repositories:
 
-- [PyTorch Lightning (Docs)](https://github.com/pytorch/pytorch)
-- [PyTorch Lightning Tutorials](https://github.com/pytorch/tutorials)
+- [PyTorch (Docs)](https://github.com/pytorch/pytorch)
+- [PyTorch Tutorials](https://github.com/pytorch/tutorials)
 
 Then follow the instructions in each repository to make the docs.
 
@@ -142,6 +145,7 @@ You can then build the Docs or Tutorials by running
 ```bash
 grunt --project=docs
 ```
+
 or
 
 ```bash
@@ -189,3 +193,23 @@ html_theme_options = {
   ...
 }
 ```
+
+## Modifying the theme
+
+In order to change the appearance of the html web sites you can change in the `theme.css`, for instance, the color of the links [here](florianmf_sphinx_theme/static/css/theme.css#L11361) or the colors of the left sidebar [here](florianmf_sphinx_theme/static/css/theme.css#L11084).
+
+The general layout of the website can be modified in the [layout.html](florianmf_sphinx_theme/layout.html) file.
+
+General configuration can be set in the [theme.conf](florianmf_sphinx_theme/theme.conf) file.
+
+The links used as `jinja variables` should be overridden in the project which uses this sphinx theme.
+
+Images and icons can be replaced [here](images) and fonts [here](fonts).
+
+## Adapt it to your repo
+
+You should replace all occurrences of:
+
+- `https://github.com/../..` by the domain name of your git remote repository provider
+- `FlorianMF` by your git repo account name
+- `florianmf_sphinx_theme` by your repo name

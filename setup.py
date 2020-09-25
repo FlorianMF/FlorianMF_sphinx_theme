@@ -38,7 +38,7 @@ setup(
     author = 'Shift Lab',
     author_email= 'info@shiftlabny.com',
     url="https://github.com/pytorch/florianmf_sphinx_theme",
-    docs_url="https://github.com/FlorianMF/florianmf_sphinx_theme",
+    docs_url="https://github.com/florianmf/florianmf_sphinx_theme",
     description='PyTorch Sphinx Theme',
     py_modules = ['florianmf_sphinx_theme'],
     packages = ['florianmf_sphinx_theme'],
